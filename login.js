@@ -16,7 +16,7 @@ const provider = new GoogleAuthProvider();
 
 const [loginEmail, loginPassword] = formField;
 
-const login = () => {
+const login = (event) => {
   event.preventDefault();
   loginBtn.innerText = "Loading...";
   signInWithEmailAndPassword(auth, loginEmail.value, loginPassword.value)
