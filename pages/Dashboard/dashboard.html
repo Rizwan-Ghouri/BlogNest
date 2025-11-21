@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Navbar</title>
+    <link rel="stylesheet" href="../../style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/pages/Home/home.html" class="logo">BlogNest</a>
+      <ul>
+        <li>
+          <a
+            href="/pages/Dashboard/dashboard.html"
+            id="showUserName"
+            class="showUserName"
+          ></a>
+        </li>
+        <li><button class="addbtn" id="Add_Post">Add Post</button></li>
+        <li><button class="logout-btn" id="logoutbtn">Logout</button></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+
+    <!-- 🔥 TODO FORM START -->
+    <div class="frm" id="frm">
+      <h1 id="heading">Add Data</h1>
+      <form action="#">
+        <label style="width: 105%" for="">Title:</label>
+        <input
+          type="text"
+          id="todotitle"
+          placeholder="Enter title"
+        /><br /><br />
+
+        <label style="width: 105%" for="">Image:</label>
+        <input
+          type="text"
+          id="todoImage"
+          placeholder="Enter image Url"
+        /><br /><br />
+        <!-- <input type="file" id="todoImage" accept="image/*"><br /><br /> -->
+
+        <label style="width: 105%" for="">Description:</label>
+        <textarea
+          id="todoDesc"
+          rows="4"
+          placeholder="Enter description..."
+        ></textarea
+        ><br /><br />
+        <button class="signUpbtn" id="addtodobtn">Add Todo</button>
+      </form>
+    </div>
+
+    <!-- 🔥 TODO FORM END -->
+
+    <!-- Ye container hai jahan todos show honge -->
+    <div class="div" id="todoShow"></div>
+
+    <!-- loader -->
+    <div class="loadwrap">
+      <div class="loader" id="loader"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.all.min.js"></script>
+    <script type="module" src="dashboard.js"></script>
+    <script type="module" src="../../firebase.js"></script>
+  </body>
+</html>

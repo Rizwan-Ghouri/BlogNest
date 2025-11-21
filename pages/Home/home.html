@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Navbar</title>
+    <link rel="stylesheet" href="../../style.css" />
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <a href="home.html" class="logo">BlogNest</a>
+      <ul>
+        <li><a class="link" href="/pages/Dashboard/dashboard.html">Your Post</a></li>
+        <li><button class="logout-btn" id="logoutbtn">Logout</button></li>
+      </ul class="ul">
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+
+    <!-- Ye container hai jahan todos show honge -->
+    <div class="div" id="todoShow"></div>
+
+    <!-- loader -->
+    <div class="loadwrap">
+      <div class="loader" id="loader"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.all.min.js"></script>
+    <script type="module" src="home.js"></script>
+    <script type="module" src="../../firebase.js"></script>
+  </body>
+</html>

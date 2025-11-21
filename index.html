@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="logo">BlogNest</a>
+    </nav>
+
+    <!-- Login Form -->
+    <h1>Login Form</h1>
+    <form action="#">
+      <input type="email" placeholder="Enter email" /><br /><br />
+      <input type="password" placeholder="Enter password" /><br /><br />
+      <a class="link" href="#" id="forgetPass">Forget password</a><br /><br />
+      <button class="signUpbtn" id="loginBtn">Login</button>
+      <button class="googlebtn" id="googlebtn">Continue with Google</button>
+      <a class="link" href="/pages/Signup/signup.html">Create Account</a>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.all.min.js"></script>
+    <script type="module" src="login.js"></script>
+    <script type="module" src="firebase.js"></script>
+  </body>
+</html>

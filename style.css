@@ -1,0 +1,450 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  padding: 3%;
+}
+
+form {
+  width: 300px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 0px;
+  border: 1px solid gray;
+}
+
+.signUpbtn {
+  width: 100%;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: large;
+}
+.googlebtn {
+  width: 100%;
+  padding: 10px;
+  background: #a10000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: large;
+}
+
+.signUpbtn:hover {
+  background: #a10000e0;
+}
+.googlebtn:hover {
+  background: #555;
+}
+
+.link {
+  display: inline-block;
+  color: #0066cc;
+  text-decoration: none;
+  text-align: center;
+  font: x-large bolder;
+} 
+
+a:hover {
+  text-decoration: underline;
+}
+
+/** -------------------------Dashboard Page---------------------------- **/
+/*--------------------- Navbar container------------------------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  color: white;
+}
+.showUserName {
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar .logo {
+  width: 20%;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+a {
+  width: 95%;
+  color: #fff;
+  padding: 8px 3px;
+}
+
+.navbar ul li a:hover {
+  color: #ff9800;
+}
+
+/* Hamburger menu button */
+.hamburger {
+  /* width: 50%; */
+  display: none;
+  flex-direction: column;
+  justify-content: end;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+.logout-btn {
+  width: 100%;
+  background-color: #ff4d4d;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #fff;
+  margin: 6px 0px;
+}
+.addbtn {
+  width: 100%;
+  background: #63ff44;
+  border: none;
+  color: #000;
+  padding: 8px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.navbar ul {
+  width: 100%;
+  display: flex; /* Desktop ke liye horizontal */
+  justify-content: end;
+  align-items: center;
+  z-index: 100;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none; /* Mobile me initially hidden */
+    flex-direction: column; /* Vertical khula menu */
+    justify-content: space-between;
+    align-items: normal;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    left: 0;
+  }
+
+  .navbar ul.active {
+    display: flex; /* Hamburger click karne pe show */
+  }
+
+  .navbar ul li {
+    margin: 5px 3px;
+    text-align: center;
+  }
+}
+
+/* .btn{
+  display: block;
+} */
+
+.logout-btn:hover {
+  background: #ff2222;
+}
+.addbtn:hover {
+  background: #157901;
+  color: #fff;
+}
+
+/** todo */
+/* Container for all todos */
+.todos-output {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 0 10px;
+}
+
+/* Ek todo item ka box */
+.todo-item {
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+/* Image ke liye style */
+.todo-item img {
+  max-width: 120px;
+  max-height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Content (title + desc) */
+.todo-content {
+  flex: 1;
+}
+
+/* Title style */
+.todo-content h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+/* Description style */
+.todo-content p {
+  margin: 0;
+  font-size: 16px;
+  color: #555;
+}
+
+/* -------------------------------------------------- */
+.div {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.todo-card {
+  width: 320px;
+  background: #f1f1f1;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  /* overflow: hidden; */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+  transition: 0.25s ease;
+  color: #000000;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+}
+
+/* Top Image */
+.hero {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: 200px;
+  /* object-fit: cover; */
+  transition: 0.4s ease;
+}
+
+.todo-card:hover .hero img {
+  transform: scale(1.1);
+}
+
+/* Text */
+.meta {
+  width: 100%;
+  /* flex: 1; */
+}
+
+.title {
+  margin: 20px 2px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.title {
+  width: 100%;
+  height: 8px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #005539;
+  border-radius: 50%;
+}
+
+.desc {
+  width: auto;
+  height: auto;
+  margin: 15px 0px;
+  font-size: medium;
+  color: #000000;
+}
+
+.frm {
+  display: none;
+}
+
+/* HTML: <div class="loader"></div> */
+.loadwrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 50%;
+}
+.loader {
+  --s: 25px;
+  --g: 5px;
+
+  height: calc(1.353 * var(--s) + var(--g));
+  aspect-ratio: 3;
+  background: linear-gradient(#ff1818 0 0) left/33% 100% no-repeat,
+    conic-gradient(
+      from -90deg at var(--s) calc(0.353 * var(--s)),
+      #fff 135deg,
+      #666 0 270deg,
+      #aaa 0
+    );
+  background-blend-mode: multiply;
+  --_m: linear-gradient(
+      to bottom right,
+      #0000 calc(0.25 * var(--s)),
+      #000 0 calc(100% - calc(0.25 * var(--s)) - 1.414 * var(--g)),
+      #0000 0
+    ),
+    conic-gradient(
+      from -90deg at right var(--g) bottom var(--g),
+      #000 90deg,
+      #0000 0
+    );
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  background-size: calc(100% / 3) 100%;
+  -webkit-mask-size: calc(100% / 3) 100%;
+  mask-size: calc(100% / 3) 100%;
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  animation: l7 steps(3) 1.5s infinite;
+}
+@keyframes l7 {
+  to {
+    background-position: 150% 0%;
+  }
+}
+
+/* responsive pages */
+
+@media only screen and (max-width: 1280px) {
+  .todo-card {
+    width: 350px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .div {
+    justify-content: space-between;
+  }
+  .todo-card {
+    width: 380px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .todo-card {
+    width: 350px;
+  }
+}
+@media only screen and (max-width: 715px) {
+  .div {
+    width: 100%;
+    display: flex;
+    gap: 2px;
+  }
+  .todo-card {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  body {
+    padding: 0%;
+    /* overflow: hidden; */
+  }
+  form {
+    width: auto;
+    font-size: medium;
+  }
+  .div {
+    width: 100%;
+    display: flex;
+    gap: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn {
+    display: none;
+  }
+  #menu-toggle {
+    display: block;
+  }
+  .hamburger {
+    display: block;
+  }
+}
