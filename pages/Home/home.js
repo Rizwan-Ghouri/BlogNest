@@ -14,8 +14,8 @@ const loader = document.getElementById("loader");
 const hamburger = document.getElementById("hamburger");
 
 hamburger.addEventListener("click", () => {
-  const menu = document.querySelector('.navbar ul');
-    menu.classList.toggle('active');
+  const menu = document.querySelector(".navbar ul");
+  menu.classList.toggle("active");
 });
 
 
@@ -32,7 +32,7 @@ const logOut = () => {
       // An error happened.
       Toast.fire({
         icon: "error",
-        title: "Logout is not successfully",
+        title: error,
       });
     });
 };
@@ -42,27 +42,36 @@ const getTodo = async () => {
   loader.style.display = "block";
   showTodo.innerHTML = "";
   const querySnapshot = await getDocs(collection(db, "Todos"));
-  querySnapshot.forEach((doc) => {
-    const { userName, title, imageURL, description } = doc.data();
-    showTodo.innerHTML += `
-      <div class="todo-card" id="todosOutput">
-      <p class="title"><span class="dot"></span>@${userName}${userName.length}</p>
-          <div class="hero">
-            <img
-            src="${imageURL}"
-            alt="Travel photo"
-            />
-          </div>
-          <div class="meta">
-            <p class="title">${title}</p>
-            <p class="desc">
-            ${description}
-            </p>
-          </div>
-        </div>
+  if (querySnapshot.empty) {
+    showTodo.innerHTML = `
+    <div class="todo-card" style="width: 100%; id="todosOutput">
+    <p class="title" style="width: auto; font-size: 25px;">You are offline</p>
+    </div>
     `;
-  });
-  loader.style.display = "none";
+  } else {
+    querySnapshot.forEach((doc) => {
+      const { userName, title, imageURL, description } = doc.data();
+      showTodo.innerHTML += `
+        <div class="todo-card" id="todosOutput">
+        <p class="title"><span class="dot"></span>@${userName}${userName.length}</p>
+            <div class="hero">
+              <img
+              src="${imageURL}"
+              alt="Travel photo"
+              />
+            </div>
+            <div class="meta">
+              <p class="title">${title}</p>
+              <p class="desc">
+              ${description}
+              </p>
+            </div>
+          </div>
+      `;
+    });
+    loader.style.display = "none";
+  }
+    loader.style.display = "none";
 };
 getTodo();
 
