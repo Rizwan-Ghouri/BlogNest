@@ -20,7 +20,7 @@ import {
   getDoc,
   updateDoc 
 } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
-import { firebaseConfig } from "./firebaseConfig.js";
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -28,7 +28,15 @@ import { firebaseConfig } from "./firebaseConfig.js";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-
+const firebaseConfig = {
+  apiKey: "AIzaSyDBfllD0_3erohnqzff6scfMENJ_t3tReI",
+  authDomain: "task-project-c94df.firebaseapp.com",
+  projectId: "task-project-c94df",
+  storageBucket: "task-project-c94df.firebasestorage.app",
+  messagingSenderId: "417078899457",
+  appId: "1:417078899457:web:a75a4b674f85181cb0a100",
+  measurementId: "G-BQS2N556VP",
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
