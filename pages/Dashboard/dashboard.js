@@ -60,8 +60,8 @@ loader.style.display = "none";
 const hamburger = document.getElementById("hamburger");
 
 hamburger.addEventListener("click", () => {
-  const menu = document.querySelector('.navbar ul');
-    menu.classList.toggle('active');
+  const menu = document.querySelector(".navbar ul");
+  menu.classList.toggle("active");
 });
 // show form
 showPost.addEventListener("click", () => {
@@ -76,7 +76,7 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-// add Data 
+// add Data
 const addTodo = async () => {
   event.preventDefault();
   if (!currentUser) {
@@ -128,9 +128,9 @@ const getTodo = async () => {
   querySnapshot.forEach((doc) => {
     const { userId, userName, title, imageURL, description } = doc.data();
     // jo user ho wohi apni post dekhe sake or edit delete kar sake
-    if (currentUser.uid === userId) {      
+    if (currentUser.uid === userId) {
       showUserName.innerText = `@${userName}${userName.length}`;
-      showUserName.style.display = "block"
+      showUserName.style.display = "block";
       showTodo.innerHTML += `
       <div class="todo-card" id="todosOutput">
             <p class="title"><span class="dot"></span>@${userName}${userName.length}</p>
@@ -154,13 +154,13 @@ const getTodo = async () => {
   });
   loader.style.display = "none";
 };
-getTodo();  
+getTodo();
 
 // Edit Data
 window.editData = async (id, e) => {
   hidePost.style.display = "block";
-  addTodoBtn.innerText = "Update";
-  heading.innerText = "Update";
+  addTodoBtn.innerText = "Update Post";
+  heading.innerText = "Update Post";
   try {
     let editData = await getDoc(doc(db, "Todos", id));
     // console.log(editData.data());
@@ -201,6 +201,8 @@ const updateData = async () => {
     });
   } finally {
     hidePost.style.display = "none";
+    addTodoBtn.innerText = "Add Post";
+    heading.innerText = "Add Post";
   }
 };
 addTodoBtn.addEventListener("click", updateData);
@@ -219,6 +221,3 @@ window.deleteData = async (id, del) => {
     });
   }
 };
-
-
-
