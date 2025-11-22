@@ -432,7 +432,6 @@ a {
 @media only screen and (max-width: 550px) {
   body {
     padding: 0%;
-    /* overflow: hidden; */
   }
   form {
     width: auto;
