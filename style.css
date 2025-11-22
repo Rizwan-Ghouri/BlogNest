@@ -148,7 +148,7 @@ a {
   font-size: 20px;
   font-weight: bolder;
   color: #fff;
-  margin: 6px 0px;
+    margin: 6px 6px 0px 0px;
 }
 .addbtn {
   width: 100%;
@@ -160,7 +160,13 @@ a {
   text-decoration: none;
   font-size: 20px;
   font-weight: bolder;
+  margin: 6px 6px 0px 0px;
 }
+.UDbtndiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
 
 .navbar ul {
   width: 100%;
@@ -259,16 +265,16 @@ a {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 5px;
 }
 
 .todo-card {
-  width: 320px;
+  width: 300px;
   background: #f1f1f1;
   padding: 10px;
-  margin: 10px;
+  margin: 10px 5px;
   border-radius: 10px;
-  /* overflow: hidden; */
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
   transition: 0.25s ease;
@@ -397,6 +403,7 @@ a {
   .todo-card {
     width: 350px;
   }
+ 
 }
 @media only screen and (max-width: 1024px) {
   .div {
@@ -405,10 +412,11 @@ a {
   .todo-card {
     width: 380px;
   }
+  
 }
 @media only screen and (max-width: 820px) {
   .todo-card {
-    width: 350px;
+    width: 340px;
   }
 }
 @media only screen and (max-width: 715px) {
@@ -448,3 +456,4 @@ a {
     display: block;
   }
 }
+ 

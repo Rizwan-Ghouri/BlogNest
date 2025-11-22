@@ -145,8 +145,10 @@ const getTodo = async () => {
             <p class="desc">
             ${description}
             </p>
-            <button class="addbtn" id="edittodobtn" onclick="editData('${doc.id}',this)">Edit</button>
-            <button class="logout-btn" id="deltodobtn" onclick="deleteData('${doc.id}',this)">Delete</button>
+            <div class="UDbtndiv">
+              <button class="addbtn" id="edittodobtn" onclick="editData('${doc.id}',this)">Edit</button>
+              <button class="logout-btn" id="deltodobtn" onclick="deleteData('${doc.id}',this)">Delete</button>
+            </div>
           </div>
         </div>
     `;
