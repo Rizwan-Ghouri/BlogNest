@@ -68,6 +68,6 @@ getTodo();
 
 onAuthStateChanged(auth, (user) => {
   if (!user) {
-    location.href = "/index.html";
+    location.href = "../../index.html";
   }
 });
