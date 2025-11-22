@@ -107,6 +107,6 @@ forgetPassbtn.addEventListener("click",forgetPass);
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    window.location.href = "pages/Home/home.html";
+    location.href = "pages/Home/home.html";
   }
 });
