@@ -11,7 +11,6 @@ import {
   deleteDoc,
   getDoc,
   updateDoc,
-  signInWithEmailAndPassword,
 } from "../../firebase.js";
 const logoutbtn = document.getElementById("logoutbtn");
 
