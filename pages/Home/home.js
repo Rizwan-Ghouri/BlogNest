@@ -5,7 +5,6 @@ import {
   signOut,
   db,
   collection,
-  //   addDoc,
   getDocs,
 } from "../../firebase.js";
 const logoutbtn = document.getElementById("logoutbtn");
